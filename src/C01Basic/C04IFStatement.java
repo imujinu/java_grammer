@@ -9,7 +9,7 @@ public class C04IFStatement {
         if(answer == sc.nextInt()) System.out.println("문이 열렸습니다.");
         else System.out.println("비밀번호가 틀렸습니다.");
 
-        if
+        //
 
     }
 }
