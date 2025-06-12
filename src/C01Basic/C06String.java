@@ -149,31 +149,60 @@ public class C06String {
 //        System.out.println(Arrays.toString(arr3));
 //        System.out.println(b.replace(" ",""));
 
-        // null과 공백의 차이
-        String st1 = null; // null은 string이 아님
-        String st2 = ""; // 공백은 문자열
-        String st3 = " ";
-//        System.out.println(st1.isEmpty()); // nullpointer exception이 발생
-        System.out.println(st2.isEmpty()); // true
-        System.out.println(st3.isEmpty()); // false
-        System.out.println(st3.isBlank()); // true
+//        // null과 공백의 차이
+//        String st1 = null; // null은 string이 아님
+//        String st2 = ""; // 공백은 문자열
+//        String st3 = " ";
+////        System.out.println(st1.isEmpty()); // nullpointer exception이 발생
+//        System.out.println(st2.isEmpty()); // true
+//        System.out.println(st3.isEmpty()); // false
+//        System.out.println(st3.isBlank()); // true
+//
+//        String abc = "hello world   java";
+//
+//        for(int i=0; i<abc.length(); i++){
+//            if(abc.substring(i,i+1).isBlank())
+//                System.out.println(i+"는 공백이다");
+//        }
+//
+//        // 문자열 합치기
+//        String[] arr = {"java","python","javascript"};
+//
+//        String answer1= "";
+//        for(String a: arr){
+//            answer1+= a+" ";
+//        }
+//        System.out.println(answer1);
+//        // StringBuffer : 문자열 조립 객체
+//        StringBuffer sb = new StringBuffer();
+//        // append는 맨뒤에 문자열을 더하는 메서드.
+//        sb.append("java");
+//        sb.append("python");
+//        sb.append("javascript");
+//        System.out.println(sb.toString());
+//        String[] arr = {"java","python","javascript"};
+//        StringBuffer sb2 = new StringBuffer();
+//        for(int i=0; i<arr.length; i++){
+//            sb2.append(arr[i]);
+//            sb2.append("\n");
+//        }
+//        sb2.insert(0,"c++");
+//        sb2.deleteCharAt(sb2.length()-1);
+//        System.out.println(sb2);
+//
+//        // StringBuilder : 문자열 조립 객체 (가장 빠름)
+//        String st1 = "hello";
+//        //StringBuilder는 동시성 이슈 발생 == Thread--Safe 하지 않음
+//        StringBuilder sb1 =new StringBuilder();
+//        sb1.append("a");
+//        //StringBuffer는 동시성 이슈 X == Thread -- safe함
+//        StringBuffer sb3 = new StringBuffer();
 
-        String abc = "hello world   java";
-
-        for(int i=0; i<abc.length(); i++){
-            if(abc.substring(i,i+1).isBlank())
-                System.out.println(i+"는 공백이다");
+        String st1 = "hello";
+        StringBuilder sb = new StringBuilder();
+        for(int i=st1.length()-1; i>=0; i--){
+            sb.append(st1.charAt(i));
         }
-
-        // 문자열 합치기
-        String[] arr = {"java","python","javascript"};
-
-        String answer1= "";
-        for(String a: arr){
-            answer1+= a+" ";
-        }
-        System.out.println(answer1);
-
-
+        System.out.println(sb);
     }
 }
