@@ -84,7 +84,7 @@ public class C07Array {
 //        }
 //        System.out.println(Arrays.toString(arr));
 //
-//        // 조합 문제 : 모두 가기 다른 숫자의 배열이 있을 때, 만들어질 수 있는 두 숫자의 조합을 문자열 형태로 출력
+        // 조합 문제 : 모두 가기 다른 숫자의 배열이 있을 때, 만들어질 수 있는 두 숫자의 조합을 문자열 형태로 출력
 //        int[] intArr = {10,20,30,40,50};
 //        ArrayList<int[]> result = new ArrayList<>();
 //        for(int i =0; i<intArr.length; i++){
@@ -92,19 +92,74 @@ public class C07Array {
 //                result.add(new int[]{intArr[i],intArr[j]});
 //            }
 //        }
+//
+//        int[][] array = result.toArray(new int[0][]);
+//
+//        System.out.println(Arrays.deepToString(array));
+//
+//        // 배열의 중복 제거
+//        int[] arr = {10,10,20,30,30,40};
+//        HashSet<Integer> set = new HashSet<>();
+//        for(int num : arr){
+//            set.add(num);
+//        }
+//
+//        System.out.println(set);
+//        int[] answer = new int[set.size()];
+//        int idx=0;
+//        for(int num : set){
+//            if(idx==answer.length)break;
+//            answer[idx] = num;
+//            idx++;
+//        }
+//        Arrays.sort(answer);
+//        System.out.println(Arrays.toString(answer));
+//            int[] arr = {5,3,1,8,7};
+//            int target= 8;
+            //8이 몇번째 index에 있는지 출력
+        //이진 검색 (이분 탐색) - binary-search
+        // 사전에 데이터가 오름차순 정렬돼 있을 경우, 이분탐색 가능
+//        int[] arr = {1,3,6,8,9,11,15};
+//        Set<Integer> set = new HashSet<>();
+//
+//
+//        //값이 있으면 해당 index 리턴
+//        // 값이 없으면 마이너스 값
+//        // 배열 값 비교
+//        int[] arr1= {10,20,30};
+//        int[] arr2= {10,20,30};
 
-        // 배열의 중복 제거
-        int[] arr = {10,10,20,30,30,40};
-        HashSet<Integer> set = new HashSet<>();
-        for(int num : arr){
-            set.add(num);
+//        System.out.println(Arrays.equals(arr1,arr2)); // 값과 순서가 모두 동일해야 한다.
+        // 2차원 배열의 선언과 값 할당
+        int[][] arr = new int[3][2];
+        // 가변 배열 : 배열의 전체길이는 반드시 할당.
+
+        int[][] arr4 = new int[3][];
+        arr4[0] = new int[2];
+        int[][] arr5 = {{1,2,3,4,}, {4,5,6,7},{7,8,9,10}};
+        System.out.println(arr5); // 2차원 배열의 주소값
+        System.out.println(Arrays.toString(arr5)); // 각 1차원 배열의 주소값
+        System.out.println(Arrays.deepToString(arr5)); // 각 1차원 배열의 값
+
+        // 가변 배열 값 채우기
+        int count=1;
+        int[][] arr2 = new int[3][];
+        for(int i=0; i<arr2.length; i++){
+            arr2[i] = new int[4];
+        for(int j=0; j<arr2[i].length; j++ ){
+            arr2[i][j] = count;
+            count++;
         }
+        }
+        System.out.println(Arrays.deepToString(arr2));
 
-        System.out.println(set);
+        // 배열 복사
 
-
-
-
+//        Arrays.copyOf(배열명, length), Arrays.copyOfRange(배열명,start,end)
+        int[] arr10 = {1,4,5,6,4,3,34,2};
+        int[] arr11 = Arrays.copyOf(arr10, 4);
+        int[] arr12 = Arrays.copyOfRange(arr10, 3, 6);
+        System.out.println(Arrays.toString(arr12));
 
     }
 }
