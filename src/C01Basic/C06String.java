@@ -158,12 +158,12 @@ public class C06String {
 //        System.out.println(st3.isEmpty()); // false
 //        System.out.println(st3.isBlank()); // true
 //
-//        String abc = "hello world   java";
+        String abc = "hello world   java";
 //
-//        for(int i=0; i<abc.length(); i++){
-//            if(abc.substring(i,i+1).isBlank())
-//                System.out.println(i+"는 공백이다");
-//        }
+        for(int i=0; i<abc.length(); i++){
+            if(abc.charAt(i)==' ')
+                System.out.println(i+"는 공백이다");
+        }
 //
 //        // 문자열 합치기
 //        String[] arr = {"java","python","javascript"};

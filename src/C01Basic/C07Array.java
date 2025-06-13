@@ -1,8 +1,6 @@
 package C01Basic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 public class C07Array {
     public static void main(String[] args) {
@@ -65,26 +63,48 @@ public class C07Array {
 //        }
 //        System.out.println(Arrays.toString(newArr));
 
-        int[] arr = { 17,12,20,10,15};
-        System.out.println(Arrays.toString(arr));
-        String[] stArr = {"abc","aaa","acb","abb"};
-        Arrays.sort(stArr, Comparator.reverseOrder());
-        System.out.println(Arrays.toString(stArr));
-        // 숫자는 내림차순 정렬이 불가능
-        // 원시 자료형은 Comparator 사용 불가능
+//        int[] arr = { 17,12,20,10,15};
+//        System.out.println(Arrays.toString(arr));
+//        String[] stArr = {"abc","aaa","acb","abb"};
+//        Arrays.sort(stArr, Comparator.reverseOrder());
+//        System.out.println(Arrays.toString(stArr));
+//        // 숫자는 내림차순 정렬이 불가능
+//        // 원시 자료형은 Comparator 사용 불가능
+//
+//        //선택 정렬 알고리즘 직접구현
+//        for(int i=0; i<arr.length; i++){
+//            int min=arr[i];
+//            for(int j=i+1; j<arr.length; j++){
+//                if(min>arr[j]){
+//                    arr[i] = arr[j];
+//                    arr[j]= min;
+//                    min=arr[i];
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+//
+//        // 조합 문제 : 모두 가기 다른 숫자의 배열이 있을 때, 만들어질 수 있는 두 숫자의 조합을 문자열 형태로 출력
+//        int[] intArr = {10,20,30,40,50};
+//        ArrayList<int[]> result = new ArrayList<>();
+//        for(int i =0; i<intArr.length; i++){
+//            for(int j=i+1; j<intArr.length; j++){
+//                result.add(new int[]{intArr[i],intArr[j]});
+//            }
+//        }
 
-        //선택 정렬 알고리즘 직접구현
-        for(int i=0; i<arr.length; i++){
-            int min=arr[i];
-            for(int j=i+1; j<arr.length; j++){
-                if(min>arr[j]){
-                    arr[i] = arr[j];
-                    arr[j]= min;
-                    min=arr[i];
-                }
-            }
+        // 배열의 중복 제거
+        int[] arr = {10,10,20,30,30,40};
+        HashSet<Integer> set = new HashSet<>();
+        for(int num : arr){
+            set.add(num);
         }
-        System.out.println(Arrays.toString(arr));
+
+        System.out.println(set);
+
+
+
+
 
     }
 }
