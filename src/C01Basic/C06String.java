@@ -198,11 +198,18 @@ public class C06String {
 //        //StringBuffer는 동시성 이슈 X == Thread -- safe함
 //        StringBuffer sb3 = new StringBuffer();
 
-        String st1 = "hello";
-        StringBuilder sb = new StringBuilder();
-        for(int i=st1.length()-1; i>=0; i--){
-            sb.append(st1.charAt(i));
-        }
-        System.out.println(sb);
+//        String st1 = "hello";
+//        StringBuilder sb = new StringBuilder();
+//        for(int i=st1.length()-1; i>=0; i--){
+//            sb.append(st1.charAt(i));
+//        }
+//        System.out.println(sb);
+
+        String s1 = "hello";
+        String s2 = "dello";
+        String s3 = "hello";
+        System.out.println(s1.compareTo(s2));
+        System.out.println(s1.compareTo(s3));
+
     }
 }
