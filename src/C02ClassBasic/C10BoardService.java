@@ -89,6 +89,7 @@ public class C10BoardService {
                 String contents = sc.nextLine();
                 Post post1 = new Post(title,contents,author);
                 author.getAuthorPost().add(post1);
+                postList.add(post1);
                 System.out.println("게시글 작성이 완료되었습니다.");
                 break;
             case 5:
@@ -107,17 +108,26 @@ public class C10BoardService {
                 String authorName = sc.nextLine();
                 boolean check3 = false;
                 Post searchResult =null;
-
-                for(Author searchAuthor : authorList){
-                    if(searchAuthor.getName().equals(authorName)){
-                        searchResult = searchAuthor.getAuthorPost().get(postNumber);
-                        check3= true;
+                Author author2 = null;
+//                for(Author searchAuthor : authorList){
+//                    if(searchAuthor.getName().equals(authorName)){
+//                        searchResult = searchAuthor.getAuthorPost().get(postNumber);
+//                        author2 = searchAuthor;
+//                        check3= true;
+//                    }
+//                }
+                for(Post searchPost : postList){
+                    if(searchPost.getId()==postNumber){
+                        searchResult = searchPost;
+                        author2 = searchPost.getAuthor();
+                        check3=true;
                     }
                 }
                 if(check3){
                     System.out.println("게시글 번호 : " + searchResult.getId());
                     System.out.println("게시글 제목 : " + searchResult.getTitle());
                     System.out.println("게시글 내용 : " + searchResult.getContents());
+                    System.out.println("작성자 이름 : " + author2);
                 }else{
                     System.out.println("게시글이 존재하지 않습니다.");
                 }
@@ -217,6 +227,15 @@ class Author{
         this.authorPost = authorPost;
     }
 
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
 
 class Post{
