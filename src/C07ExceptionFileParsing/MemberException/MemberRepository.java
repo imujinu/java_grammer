@@ -18,7 +18,7 @@ public class MemberRepository {
     }
     //회원 상세조회
     public Optional<Member> findById(Long id) {
-        return Optional.ofNullable(checkId(id));
+        return memberList.stream().filter(a->a.getId()==id).findFirst();
     }
     // 회원 목록 조회
     public List<Member> findAll(){
@@ -33,16 +33,7 @@ public class MemberRepository {
         return null;
     }
     public void checkEmail(Member member){
-        boolean check = false;
-        for(Member member1 : memberList){
-            if(member1.getEmail().equals(member.getEmail())){
-                check = true;
-            }
-        }
-
-        if(check){
-            throw new Exception.DuplicateEmailException("중복된 이메일입니다.");
-        }
+        memberList.stream().filter(a -> a.getEmail().equals(member)).findFirst();
     }
 
     public Member checkId(Long id){
